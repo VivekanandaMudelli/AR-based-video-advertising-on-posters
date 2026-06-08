@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Poster Detection Demo</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>AR Poster Detection Demo</h1>
+
+        <p class="subtitle">
+            Upload a poster image and analyze it using our
+            computer vision pipeline.
+        </p>
+
+        <form
+            class="upload-card"
+            action="/process"
+            method="POST"
+            enctype="multipart/form-data">
+
+            <input
+                type="file"
+                name="image"
+                id="image-upload"
+                accept="image/*"
+                required>
+
+            <button type="submit">
+                Analyze
+            </button>
+
+        </form>
+
+        <div class="result-section">
+
+            <h2>Preview</h2>
+
+            <div class="preview-box">
+                No image selected
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
